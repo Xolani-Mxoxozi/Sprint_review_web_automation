@@ -47,11 +47,11 @@ python:
   - pypy
 
 install:
-  - pip install --use-mirrors -q mock nose PyHamcrest
+#   - pip install --use-mirrors -q mock nose PyHamcrest
   - python setup.py -q install
 script:
   - python --version
-  - nosetests
+#   - nosetests
   - behave -f progress --junit --tags=login
 #   - behave -f progress --junit --tags=~@xfail tools/test-features/
 #   - behave -f progress --junit --tags=~@xfail issue.features/
