@@ -54,6 +54,6 @@ install:
 script:
   - python --version
 #   - nosetests
-  - behave -f progress --junit --tags=login
+  - behave
 #   - behave -f progress --junit --tags=~@xfail tools/test-features/
 #   - behave -f progress --junit --tags=~@xfail issue.features/
