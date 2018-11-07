@@ -1,41 +1,57 @@
-language: python
-sudo: true
+# language: python
+# sudo: true
 
-cache:
-  - pip
-  - bundler
+# cache:
+#   - pip
+#   - bundler
   
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - openvpn
-      - libmagic-dev
-      - tree
-      - google-chrome-stable
+# addons:
+#   apt:
+#     sources:
+#       - google-chrome
+#     packages:
+#       - openvpn
+#       - libmagic-dev
+#       - tree
+#       - google-chrome-stable
 
-env:
-  - CHROMEDRIVER_VERSION=2.37
+# env:
+#   - CHROMEDRIVER_VERSION=2.37
 
-before_install:
-  - wget -N http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip -P ~/
-  - unzip ~/chromedriver_linux64.zip -d ~/
-  - rm ~/chromedriver_linux64.zip
-  - sudo mv -f ~/chromedriver /usr/local/bin/chromedriver
-  - sudo chown root:root /usr/local/bin/chromedriver
-  - sudo chmod 0755 /usr/local/bin/chromedriver
-  - rvm install 2.2
-  - rvm use 2.2
-  - gem install hiptest-publisher
-  - export PATH=$PATH:$HOME/.local/bin
-  - pip install behave
-  - pip install toolium
+# before_install:
+#   - wget -N http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip -P ~/
+#   - unzip ~/chromedriver_linux64.zip -d ~/
+#   - rm ~/chromedriver_linux64.zip
+#   - sudo mv -f ~/chromedriver /usr/local/bin/chromedriver
+#   - sudo chown root:root /usr/local/bin/chromedriver
+#   - sudo chmod 0755 /usr/local/bin/chromedriver
+#   - rvm install 2.2
+#   - rvm use 2.2
+#   - gem install hiptest-publisher
+#   - export PATH=$PATH:$HOME/.local/bin
+#   - pip install behave
+#   - pip install toolium
 
+# script:
+#   - behave --tags=Login
+# #   - sh startTest.sh
+# #   - sleep 10
+# #   - behave Second_web_demo  
+# #   - sleep 10
+# #   - behave android_behave
+
+language: python
+python:
+  - 2.6
+  - 2.7
+  - pypy
+
+install:
+  - pip install --use-mirrors -q mock nose PyHamcrest
+  - python setup.py -q install
 script:
-  - behave --tags=Login
-#   - sh startTest.sh
-#   - sleep 10
-#   - behave Second_web_demo  
-#   - sleep 10
-#   - behave android_behave
+  - python --version
+  - nosetests
+  - behave -f progress --junit --tags=login
+#   - behave -f progress --junit --tags=~@xfail tools/test-features/
+#   - behave -f progress --junit --tags=~@xfail issue.features/
