@@ -29,7 +29,7 @@ before_install:
   - rvm use 2.2
   - gem install hiptest-publisher
   - export PATH=$PATH:$HOME/.local/bin
-  
+  - pip install reinterpret
 
 script:
   - behave --tags=Login
