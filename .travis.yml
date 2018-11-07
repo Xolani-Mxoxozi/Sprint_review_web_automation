@@ -29,7 +29,8 @@ before_install:
   - rvm use 2.2
   - gem install hiptest-publisher
   - export PATH=$PATH:$HOME/.local/bin
-  - pip install reinterpret
+  - pip install behave
+  - pip install toolium
 
 script:
   - behave --tags=Login
