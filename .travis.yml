@@ -19,7 +19,9 @@ env:
     - username: "xolanimxoxozi"
     - access_key: "3bd6fd59-45ea-4b29-9c9c-6c5b0710caae"
 
-script:
+before_script:
     - docker run -it -v /$(pwd):/dev/shm/ kineticskunk/node-chrome:3.11.1-toolium bash
+ 
+script:
     - cd dev/shm/Sprint_review_web_automation
     - behave
