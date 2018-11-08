@@ -27,9 +27,9 @@ import time
 class LoginPageObject(PageObject):
 
     def init_page_elements(self):
-        self.username = InputText(By.ID, 'email')
-        self.password = InputText(By.ID, 'passwd')
-        self.login_button = Button(By.ID, 'SubmitLogin')
+        self.username = InputText(By.XPATH, '//*[@id="email"]')
+        self.password = InputText(By.XPATH, '//*[@id="passwd"]')
+        self.login_button = Button(By.XPATH, '//*[@id="SubmitLogin"]')
         self.message = MessagePageObject()
 
     def open(self):
