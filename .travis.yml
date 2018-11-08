@@ -22,10 +22,16 @@ cache:
   directories:
     - $HOME/.cache/pip
   
+# addons:
+# #   chrome: stable
+#   sauce_connect: true
+
 addons:
-#   chrome: stable
-  sauce_connect: true
-  
+  apt:
+    packages:
+      - google-chrome-stable
+#       - sauce_connect: true
+
 env:
   global:
 #     - secure: L/aGHl+XZ2tyeZ0xZTkKPySfsVZxkQt9Y3naN0icMu8DoXP83eUQ/gKooEKP0i0XTvwslCGa808UyZ99mWAdZ/WBA23i7q3fCLHwMcA7EcRsDky8vv6nMu00jTwLEX2ly+3+jc4xZV7ZO7KJNBRBcSD78L2KiMiRUzZ+WFZVrZ0=
