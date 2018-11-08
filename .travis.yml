@@ -6,11 +6,7 @@ python:
  
 services:
     - docker
-  
-before_install:
-    - docker pull kineticskunk/node-chrome:3.11.1-toolium
-    - docker ps -a
-
+    
 env:
   global:
 #     - secure: L/aGHl+XZ2tyeZ0xZTkKPySfsVZxkQt9Y3naN0icMu8DoXP83eUQ/gKooEKP0i0XTvwslCGa808UyZ99mWAdZ/WBA23i7q3fCLHwMcA7EcRsDky8vv6nMu00jTwLEX2ly+3+jc4xZV7ZO7KJNBRBcSD78L2KiMiRUzZ+WFZVrZ0=
@@ -18,10 +14,14 @@ env:
 
     - username: "xolanimxoxozi"
     - access_key: "3bd6fd59-45ea-4b29-9c9c-6c5b0710caae"
+    
+before_install:
+    - docker pull kineticskunk/node-chrome:3.11.1-toolium
+    - docker ps -a
 
 before_script:
     - docker run -it -v /$(pwd):/dev/shm/ kineticskunk/node-chrome:3.11.1-toolium bash
- 
+
 script:
     - cd dev/shm/Sprint_review_web_automation
     - behave
