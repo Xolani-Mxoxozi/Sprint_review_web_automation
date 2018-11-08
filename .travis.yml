@@ -8,10 +8,10 @@ services:
     
 before_install:
     - docker pull kineticskunk/node-chrome:3.11.1-toolium
-    - docker run -it -v /$(pwd):/dev/shm/ kineticskunk/node-chrome:3.11.1-toolium bash
+    - docker run -it -v /$(pwd):/dev/shm/ kineticskunk/node-chrome:3.11.1-toolium
     
 script:
-    - sh tests.sh
+#     - sh tests.sh
 
-#     - cd dev/shm/Sprint_review_web_automation
-#     - behave
+    - cd dev/shm/Sprint_review_web_automation
+    - behave
