@@ -6,12 +6,12 @@ python:
 services:
     - docker
     
-before_install:
+script:
     - docker pull kineticskunk/node-chrome:3.11.1-toolium
     - docker run -it -v /$(pwd):/dev/shm/ kineticskunk/node-chrome:3.11.1-toolium bahs && cd dev/shm/Sprint_review_web_automation
     
-# script:
-#     - bash tests.sh
+after_script:
+    - bash tests.sh
 
 #     - cd dev/shm/Sprint_review_web_automation
 #     - behave
