@@ -1,5 +1,5 @@
 language: python
-sudo: required
+sudo: flase
 python:
   - "3.6"
   - "2.7"
