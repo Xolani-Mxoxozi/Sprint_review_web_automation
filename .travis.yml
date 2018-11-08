@@ -45,21 +45,19 @@ language: python
 python:
   - 2.7
 
-before_install:
+# before_install:
 #   - wget -N http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip -P ~/
-  - wget http://chromedriver.storage.googleapis.com/2.40/chromedriver_linux64.zip
-  - unzip chromedriver_linux64.zip -d /home/travis/virtualenv/python2.7.9/
 #   - unzip ~/chromedriver_linux64.zip -d ~/
 #   - rm ~/chromedriver_linux64.zip
-  - sudo mv -f ~/chromedriver /usr/local/bin/chromedriver
-  - sudo chown root:root /usr/local/bin/chromedriver
-  - sudo chmod 0755 /usr/local/bin/chromedriver
-  - rvm install 2.2
-  - rvm use 2.2
-  - gem install hiptest-publisher
-  - export PATH=$PATH:$HOME/.local/bin
-  - pip install behave
-  - pip install toolium
+#   - sudo mv -f ~/chromedriver /usr/local/bin/chromedriver
+#   - sudo chown root:root /usr/local/bin/chromedriver
+#   - sudo chmod 0755 /usr/local/bin/chromedriver
+#   - rvm install 2.2
+#   - rvm use 2.2
+#   - gem install hiptest-publisher
+#   - export PATH=$PATH:$HOME/.local/bin
+#   - pip install behave
+#   - pip install toolium
   
 before_script:
   - wget http://chromedriver.storage.googleapis.com/2.40/chromedriver_linux64.zip
