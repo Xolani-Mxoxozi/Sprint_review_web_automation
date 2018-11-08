@@ -7,12 +7,11 @@ services:
     - docker
     
 script:
-    - docker pull kineticskunk/node-chrome:3.11.1-toolium
-    - docker run -it -v /$(pwd):/dev/shm/ kineticskunk/node-chrome:3.11.1-toolium bash && 
-      cd dev/shm/Sprint_review_web_automation && behave
+#     - docker pull kineticskunk/node-chrome:3.11.1-toolium
+    - docker run -it -v /$(pwd):/dev/shm/ kineticskunk/node-chrome:3.11.1-toolium bash
     
-# after_script:
+after_script:
 #     - bash test.sh
 
 #     - cd dev/shm/Sprint_review_web_automation
-#     - behave
+    - behave
