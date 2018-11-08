@@ -56,9 +56,9 @@ install:
   - npm install --save-dev testcafe-browser-provider-saucelabs
 
 script:
-  - behave --tags=login
+#   - behave --tags=login
 #   - sh startTest.sh
 #   - sleep 10
 #   - behave Second_web_demo  
 #   - sleep 10
-#   - behave android_behave
+  - behave
