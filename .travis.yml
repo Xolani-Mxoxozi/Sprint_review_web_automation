@@ -8,7 +8,7 @@ services:
     
 before_install:
     - docker pull kineticskunk/node-chrome:3.11.1-toolium
-    - docker run -it -v /$(pwd):/dev/shm/ kineticskunk/node-chrome:3.11.1-toolium < tests.sh
+    - docker run -it -v /$(pwd):/dev/shm/ kineticskunk/node-chrome:3.11.1-toolium < test.sh
     
 script:
     - bash tests.sh
