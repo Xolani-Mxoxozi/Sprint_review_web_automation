@@ -22,6 +22,6 @@ before_install:
 before_script:
     - docker run -it -v /$(pwd):/dev/shm/ kineticskunk/node-chrome:3.11.1-toolium bash
 
-script:
-    - cd dev/shm/Sprint_review_web_automation
-    - behave
+# script:
+#     - cd dev/shm/Sprint_review_web_automation
+#     - behave
