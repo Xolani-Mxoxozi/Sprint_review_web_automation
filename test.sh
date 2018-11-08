@@ -1,3 +1,3 @@
   #!/usr/bin/python
   
-  behave
+  behave --tags=login
