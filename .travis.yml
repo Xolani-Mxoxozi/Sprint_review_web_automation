@@ -40,9 +40,9 @@ env:
     - username: "xolanimxoxozi"
     - access_key: "3bd6fd59-45ea-4b29-9c9c-6c5b0710caae"
     
-before_script:
-  - python -m SimpleHTTPServer &
-  - sleep 5
+# before_script:
+#   - python -m SimpleHTTPServer &
+#   - sleep 5
   
 install:
   - sudo apt-get install xvfb
@@ -53,13 +53,13 @@ install:
   - pip install toolium
   - pip install sauceclient
   
-  - wget -N http://chromedriver.storage.googleapis.com/2.36/chromedriver_linux64.zip -P ~/
-  - unzip ~/chromedriver_linux64.zip -d ~/
-  - sudo rm ~/chromedriver_linux64.zip
-  - sudo mv -f ~/chromedriver /usr/local/share/
-  - sudo chmod +x /usr/local/share/chromedriver
-  - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
-  - npm install --save-dev testcafe-browser-provider-saucelabs
+#   - wget -N http://chromedriver.storage.googleapis.com/2.36/chromedriver_linux64.zip -P ~/
+#   - unzip ~/chromedriver_linux64.zip -d ~/
+#   - sudo rm ~/chromedriver_linux64.zip
+#   - sudo mv -f ~/chromedriver /usr/local/share/
+#   - sudo chmod +x /usr/local/share/chromedriver
+#   - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+#   - npm install --save-dev testcafe-browser-provider-saucelabs
 
 script:
   - sh test.sh
